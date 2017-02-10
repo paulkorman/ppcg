@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="zh-cmn-Hans">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
+    <title>WeUI</title>
+    <link rel="stylesheet" href="styles/weui.css"/>
+    <link rel="stylesheet" href="styles/main.css"/>
+    <script src="js/zepto.min.js"></script>
+    <script src="js/main.js"></script>
+</head>
+<body ontouchstart>
+<div class="page">
+    <div class="page__hd">
+        <div class="weui-search-bar" id="searchBar">
+            <form class="weui-search-bar__form">
+                <div class="weui-search-bar__box">
+                    <i class="weui-icon-search"></i>
+                    <input type="search" class="weui-search-bar__input" id="searchInput" value="" placeholder="" required="">
+                    <a href="javascript:" class="weui-icon-clear" id="searchClear"></a>
+                </div>
+                <label class="weui-search-bar__label" id="searchText">
+                    <i class="weui-icon-search"></i>
+                    <span>输入你要找的商家</span>
+                </label>
+            </form>
+            <a href="javascript:" class="weui-search-bar__cancel-btn" id="searchCancel">搜索</a>
+        </div>
+        <script type="text/javascript" class="searchbar js_show">
+            $(function(){
+                var $searchBar = $('#searchBar'),
+                        $searchResult = $('#searchResult'),
+                        $searchText = $('#searchText'),
+                        $searchInput = $('#searchInput'),
+                        $searchClear = $('#searchClear'),
+                        $searchCancel = $('#searchCancel');
+
+                function hideSearchResult(){
+                    $searchResult.hide();
+                    $searchInput.val('');
+                }
+                function cancelSearch(){
+                    hideSearchResult();
+                    $searchBar.removeClass('weui-search-bar_focusing');
+                    $searchText.show();
+                }
+
+                $searchText.on('click', function(){
+                    $searchBar.addClass('weui-search-bar_focusing');
+                    $searchInput.focus();
+                });
+                $searchInput
+                        .on('blur', function () {
+                            if(!this.value.length) cancelSearch();
+                        })
+                        .on('input', function(){
+                            if(this.value.length) {
+                                $searchResult.show();
+                            } else {
+                                $searchResult.hide();
+                            }
+                        })
+                ;
+                $searchClear.on('click', function(){
+                    hideSearchResult();
+                    $searchInput.focus();
+                });
+                $searchCancel.on('click', function(){
+                    cancelSearch();
+                    $searchInput.blur();
+                });
+            });
+        </script>
+    </div>
+    <div class="page__bd page__bd_spacing">
+        <div class="weui-panel weui-panel_access">
+            <div class="weui-panel__hd">地产买卖投资</div>
+            <div class="weui-panel__bd">
+                <div class="weui-flex btn-ppcg-group">
+                    <div class="weui-flex__item"><a href="ppcg_yellow_page__realtor_list_page.html" class="btn-ppcg">地产经纪</a></div>
+                    <div class="weui-flex__item"><a href="ppcg_yellow_page__mortgage_broker_list_page.html" class="btn-ppcg">贷款经纪</a></div>
+                    <div class="weui-flex__item"><a href="ppcg_yellow_page__home_inspector_list_page.html" class="btn-ppcg">验屋师</a></div>
+                    <div class="weui-flex__item"><a href="ppcg_yellow_page__real_estate_lawyer_or_notorary_l.html" class="btn-ppcg">交割律师或公证</a></div>
+                </div>
+                <div class="weui-flex btn-ppcg-group">
+                    <div class="weui-flex__item"><a href="ppcg_yellow_page__builder_list_page.html" class="btn-ppcg">建商</a></div>
+                    <div class="weui-flex__item"></div>
+                    <div class="weui-flex__item"></div>
+                    <div class="weui-flex__item"></div>
+                </div>
+            </div>
+            <div class="weui-panel__ft"></div>
+        </div>
+        <div class="content-ppcg">
+            <div class="msg-ppcg">
+                此处应该有广告<br>
+                但是还有找到财大气粗的商家包养<br>
+                如果您觉得我们的服务挺好，请帮找找！
+            </div>
+        </div>
+    </div>
+    <div class="page__ft j_bottom">
+        <div class="weui-flex">
+            <div class="weui-flex__item"><a href="ppcg_yellow_page_home.html" class="btn-ppcg">首页</a></div>
+            <div class="weui-flex__item"><a href="ppcg_yellow_page__flyers.html" class="btn-ppcg">超市每周打折信息</a></div>
+            <div class="weui-flex__item"><a href="ppcg_yellow_page__number_management_saved.html" class="btn-ppcg">号码管理</a></div>
+        </div>
+    </div>
+
+
+</div>
+<script type="text/javascript" src="https://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+<script src="https://res.wx.qq.com/open/libs/weuijs/1.0.0/weui.min.js"></script>
+</body>
+</html>

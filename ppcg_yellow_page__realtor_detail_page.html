@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="zh-cmn-Hans">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
+    <title>WeUI</title>
+    <link rel="stylesheet" href="styles/weui.css"/>
+    <link rel="stylesheet" href="bower_components/bxslider-4/dist/jquery.bxslider.css"/>
+    <link rel="stylesheet" href="styles/main.css"/>
+    <script src="js/zepto.min.js"></script>
+    <script src="bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="bower_components/bxslider-4/dist/jquery.bxslider.min.js"></script>
+    <script src="js/main.js"></script>
+</head>
+<body ontouchstart>
+<div class="page realtor-detail-page">
+    <div class="page__hd text-center">
+        <h4>三木地产</h4>
+        <span class="status">会员</span>
+        <div class="descr">温哥华地产的极简。服务大温地区30<br>年，在一些地方超越了一切</div>
+        <ul class="bxslider">
+            <li><img src="img/face-2.jpg" /></li>
+            <li><img src="img/face-2.jpg" /></li>
+            <li><img src="img/face-2.jpg" /></li>
+        </ul>
+        <script>
+            $('.bxslider').bxSlider({
+                controls: false
+            });
+        </script>
+    </div>
+    <div class="page__bd page__bd_spacing">
+        <div class="weui-cells">
+            <div class="weui-cell">
+                <div class="weui-cell__bd">
+                    <p>语言：</p>
+                </div>
+                <div class="weui-cell__ft"> 国语 粤语 英文</div>
+            </div>
+            <div class="weui-cell">
+                <div class="weui-cell__bd">
+                    <p>服务地区：</p>
+                </div>
+                <div class="weui-cell__ft"> 高桂林 高桂林港</div>
+            </div>
+            <div class="weui-cell">
+                <div class="weui-cell__bd">
+                    <p>电话：</p>
+                </div>
+                <div class="weui-cell__ft"> 点击拨打电话 <i class="pf pf-2x pf-phone"></i></div>
+            </div>
+            <div class="weui-cell">
+                <div class="weui-cell__bd">
+                    <p>邮件：</p>
+                </div>
+                <div class="weui-cell__ft">点击发邮件<i class="pf pf-send"></i></div>
+            </div>
+            <div class="weui-cell">
+                <div class="weui-cell__bd">
+                    <p>微信：</p>
+                </div>
+                <div class="weui-cell__ft"><img src="img/qr.png" alt=""></div>
+            </div>
+            <div class="weui-cell">
+                <div class="weui-cell__bd">
+                    <p>联系人：</p>
+                </div>
+                <div class="weui-cell__ft">Sam Long</div>
+            </div>
+            <div class="weui-cell">
+                <div class="weui-cell__bd">
+                    <p>详细信息</p><br>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo. Proin sodales pulvinar tempor. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nam fermentum, nulla luctus pharetra vulputate, felis tellus mollis orci, sed rhoncus sapien nunc eget.</p>
+                    <p class="text-center"><a href="javascript:;" class="weui-btn weui-btn_mini weui-btn_default">全部</a></p>
+                </div>
+            </div>
+        </div>
+        <div class="weui-cells" style="margin-bottom: 30px">
+            <div class="weui-cell">
+                <div class="weui-cell__bd">
+                    <span style="line-height: 2em">我是三木地产，我要管理。</span> <a href="ppcg_yellow_page__listing_managment_request.html"><i class="pf pf-2x pf-settings"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="weui-tab">
+        <div class="weui-tab__panel">
+
+        </div>
+        <div class="weui-tabbar">
+            <a href="javascript:;" class="weui-tabbar__item weui-bar__item_on">
+                <span style="font-size: 16px">免费预约</span>
+            </a>
+            <a href="javascript:;" class="weui-tabbar__item">
+                <i class="pf pf-2x pf-phone"></i>
+                <p class="weui-tabbar__label">打电话</p>
+            </a>
+            <a href="javascript:;" class="weui-tabbar__item">
+                <i class="pf pf-2x pf-send"></i>
+                <p class="weui-tabbar__label">发邮件</p>
+            </a>
+            <a href="javascript:;" class="weui-tabbar__item">
+                <i class="pf pf-2x pf-heart"></i> <!-- if selected <i class="pf pf-2x pf-heart-active"></i>-->
+                <p class="weui-tabbar__label">收藏</p>
+            </a>
+        </div>
+    </div>
+    <script type="text/javascript" class="tabbar js_show">
+        $(function(){
+            $('.weui-tabbar__item').on('click', function () {
+                $(this).addClass('weui-bar__item_on').siblings('.weui-bar__item_on').removeClass('weui-bar__item_on');
+            });
+        });
+    </script>
+
+
+</div>
+<script type="text/javascript" src="https://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+<script src="https://res.wx.qq.com/open/libs/weuijs/1.0.0/weui.min.js"></script>
+</body>
+</html>

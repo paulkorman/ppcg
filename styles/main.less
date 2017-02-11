@@ -111,11 +111,28 @@
   }
 }
 
+html,
+body {
+  height: 100%;
+}
+
+.page {
+  position: relative;
+  min-height: 100%;
+  .page__bd {
+    padding-bottom: 70px;
+  }
+}
+
 .page__ft.j_bottom {
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  right: 0;
+
+  .weui-flex {
+    position: absolute;
+    z-index: 500;
+    bottom: 0;
+    width: 100%;
+    background-color: #F7F7FA;
+  }
   .weui-flex__item {
     font-size: 12px;
     text-align: center;
@@ -177,6 +194,10 @@
     padding-right: 20px;
     padding-left: 20px;
   }
+  .pf-location {
+    font-size: 1.6em;
+    color: #7892c0;
+  }
   .service-location {
     margin-top: 10px;
     span {
@@ -229,6 +250,9 @@
     .pf-send {
       font-size: 1.3em;
     }
+    .pf-location {
+      font-size: 1.4em;
+    }
     .pf-settings {
       font-size: 1.8em;
     }
@@ -242,6 +266,7 @@
 .bx-wrapper {
   margin: 0 auto 10px;
   box-shadow: none;
+  border: none;
   img {
     width: 100%;
   }
@@ -283,4 +308,15 @@
       color: #ffffff;
     }
   }
+}
+
+.table-style {
+  .weui-flex__item {
+    padding: 5px;
+    font-size: 14px;
+  }
+}
+
+.weui-panel__ft.pdng-b {
+  padding-bottom: 10px;
 }

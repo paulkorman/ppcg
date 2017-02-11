@@ -83,11 +83,23 @@
 .content-ppcg .msg-ppcg {
   padding-top: 100px;
 }
-.page__ft.j_bottom {
-  position: fixed;
+html,
+body {
+  height: 100%;
+}
+.page {
+  position: relative;
+  min-height: 100%;
+}
+.page .page__bd {
+  padding-bottom: 70px;
+}
+.page__ft.j_bottom .weui-flex {
+  position: absolute;
+  z-index: 500;
   bottom: 0;
-  left: 0;
-  right: 0;
+  width: 100%;
+  background-color: #F7F7FA;
 }
 .page__ft.j_bottom .weui-flex__item {
   font-size: 12px;
@@ -137,6 +149,10 @@
   padding-right: 20px;
   padding-left: 20px;
 }
+.weui-cells-ppgc .pf-location {
+  font-size: 1.6em;
+  color: #7892c0;
+}
 .weui-cells-ppgc .service-location {
   margin-top: 10px;
 }
@@ -180,6 +196,9 @@
 .realtor-detail-page .page__bd .pf-send {
   font-size: 1.3em;
 }
+.realtor-detail-page .page__bd .pf-location {
+  font-size: 1.4em;
+}
 .realtor-detail-page .page__bd .pf-settings {
   font-size: 1.8em;
 }
@@ -190,6 +209,7 @@
 .bx-wrapper {
   margin: 0 auto 10px;
   box-shadow: none;
+  border: none;
 }
 .bx-wrapper img {
   width: 100%;
@@ -226,4 +246,11 @@
 .weui-tabbar .weui-bar__item_on .weui-tabbar__label,
 .weui-tabbar .weui-bar__item_on .pf {
   color: #ffffff;
+}
+.table-style .weui-flex__item {
+  padding: 5px;
+  font-size: 14px;
+}
+.weui-panel__ft.pdng-b {
+  padding-bottom: 10px;
 }

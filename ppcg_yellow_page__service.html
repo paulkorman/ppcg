@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="zh-cmn-Hans">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
+    <title>WeUI</title>
+    <link rel="stylesheet" href="styles/weui.css"/>
+    <link rel="stylesheet" href="styles/main.css"/>
+    <script src="js/zepto.min.js"></script>
+    <script src="js/main.js"></script>
+</head>
+<body ontouchstart>
+<div class="page">
+    <div class="page__hd">
+        <div class="weui-search-bar" id="searchBar">
+            <form class="weui-search-bar__form">
+                <div class="weui-search-bar__box">
+                    <i class="weui-icon-search"></i>
+                    <input type="search" class="weui-search-bar__input" id="searchInput" value="" placeholder="" required="">
+                    <a href="javascript:" class="weui-icon-clear" id="searchClear"></a>
+                </div>
+                <label class="weui-search-bar__label" id="searchText">
+                    <i class="weui-icon-search"></i>
+                    <span>输入你要找的商家</span>
+                </label>
+            </form>
+            <a href="javascript:" class="weui-search-bar__cancel-btn" id="searchCancel">搜索</a>
+        </div>
+        <script type="text/javascript" class="searchbar js_show">
+            $(function(){
+                var $searchBar = $('#searchBar'),
+                        $searchResult = $('#searchResult'),
+                        $searchText = $('#searchText'),
+                        $searchInput = $('#searchInput'),
+                        $searchClear = $('#searchClear'),
+                        $searchCancel = $('#searchCancel');
+
+                function hideSearchResult(){
+                    $searchResult.hide();
+                    $searchInput.val('');
+                }
+                function cancelSearch(){
+                    hideSearchResult();
+                    $searchBar.removeClass('weui-search-bar_focusing');
+                    $searchText.show();
+                }
+
+                $searchText.on('click', function(){
+                    $searchBar.addClass('weui-search-bar_focusing');
+                    $searchInput.focus();
+                });
+                $searchInput
+                        .on('blur', function () {
+                            if(!this.value.length) cancelSearch();
+                        })
+                        .on('input', function(){
+                            if(this.value.length) {
+                                $searchResult.show();
+                            } else {
+                                $searchResult.hide();
+                            }
+                        })
+                ;
+                $searchClear.on('click', function(){
+                    hideSearchResult();
+                    $searchInput.focus();
+                });
+                $searchCancel.on('click', function(){
+                    cancelSearch();
+                    $searchInput.blur();
+                });
+            });
+        </script>
+    </div>
+    <div class="page__bd page__bd_spacing">
+        <div class="weui-panel">
+            <div class="weui-panel__hd"><h3>接送搬运快件</h3></div>
+            <div class="weui-panel__bd">
+                <div class="weui-media-box weui-media-box_text">
+                    <div class="weui-flex text-center table-style">
+                        <div class="weui-flex__item">搬家</div>
+                        <div class="weui-flex__item">机场接送</div>
+                        <div class="weui-flex__item">包车</div>
+                        <div class="weui-flex__item">快件</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="weui-panel">
+            <div class="weui-panel__hd"><h3>家政服务</h3></div>
+            <div class="weui-panel__bd">
+                <div class="weui-media-box weui-media-box_text">
+                    <div class="weui-flex text-center table-style">
+                        <div class="weui-flex__item">房屋清洗</div>
+                        <div class="weui-flex__item">地毯清洗</div>
+                        <div class="weui-flex__item">洗衣及干衣</div>
+                        <div class="weui-flex__item">废物处理</div>
+                    </div>
+                    <div class="weui-flex text-center table-style">
+                        <div class="weui-flex__item">灭虫</div>
+                        <div class="weui-flex__item">配匙开锁</div>
+                        <div class="weui-flex__item">保姆</div>
+                        <div class="weui-flex__item">月子</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="weui-panel">
+            <div class="weui-panel__hd"><h3>金融理财</h3></div>
+            <div class="weui-panel__bd">
+                <div class="weui-media-box weui-media-box_text">
+                    <div class="weui-flex text-center table-style">
+                        <div class="weui-flex__item">会计报税</div>
+                        <div class="weui-flex__item">投资理财</div>
+                        <div class="weui-flex__item">保险经纪</div>
+                        <div class="weui-flex__item">汇款换汇</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="weui-panel">
+            <div class="weui-panel__hd"><h3>手机电脑家电</h3></div>
+            <div class="weui-panel__bd">
+                <div class="weui-media-box weui-media-box_text">
+                    <div class="weui-flex text-center table-style">
+                        <div class="weui-flex__item">手机维修</div>
+                        <div class="weui-flex__item">电脑维修</div>
+                        <div class="weui-flex__item">家电维修</div>
+                        <div class="weui-flex__item">手机计划</div>
+                    </div>
+                    <div class="weui-flex text-center table-style">
+                        <div class="weui-flex__item">上网计划</div>
+                        <div class="weui-flex__item">电视计划</div>
+                        <div class="weui-flex__item"></div>
+                        <div class="weui-flex__item"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="weui-panel">
+            <div class="weui-panel__hd"><h3>美容美发</h3></div>
+            <div class="weui-panel__bd">
+                <div class="weui-media-box weui-media-box_text">
+                    <div class="weui-flex text-center table-style">
+                        <div class="weui-flex__item">美容</div>
+                        <div class="weui-flex__item">美发</div>
+                        <div class="weui-flex__item">美甲</div>
+                        <div class="weui-flex__item">足疗</div>
+                    </div>
+                    <div class="weui-flex text-center table-style">
+                        <div class="weui-flex__item">嫁接睫毛</div>
+                        <div class="weui-flex__item">减肥瘦身</div>
+                        <div class="weui-flex__item"></div>
+                        <div class="weui-flex__item"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="weui-panel">
+            <div class="weui-panel__hd"><h3>宠物</h3></div>
+            <div class="weui-panel__bd">
+                <div class="weui-media-box weui-media-box_text">
+                    <div class="weui-flex text-center table-style">
+                        <div class="weui-flex__item">宠物寄养</div>
+                        <div class="weui-flex__item">宠物美容</div>
+                        <div class="weui-flex__item">宠物医院</div>
+                        <div class="weui-flex__item"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="weui-panel">
+            <div class="weui-panel__hd"><h3>留学移民相关</h3></div>
+            <div class="weui-panel__bd">
+                <div class="weui-media-box weui-media-box_text">
+                    <div class="weui-flex text-center table-style">
+                        <div class="weui-flex__item">留学中介</div>
+                        <div class="weui-flex__item">移民中介</div>
+                        <div class="weui-flex__item">特快美签</div>
+                        <div class="weui-flex__item">特快中签</div>
+                    </div>
+                    <div class="weui-flex text-center table-style">
+                        <div class="weui-flex__item">入籍专家</div>
+                        <div class="weui-flex__item"></div>
+                        <div class="weui-flex__item"></div>
+                        <div class="weui-flex__item"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="weui-panel">
+            <div class="weui-panel__hd"><h3>摄影婚庆</h3></div>
+            <div class="weui-panel__bd">
+                <div class="weui-media-box weui-media-box_text">
+                    <div class="weui-flex text-center table-style">
+                        <div class="weui-flex__item">摄影摄像</div>
+                        <div class="weui-flex__item">婚庆</div>
+                        <div class="weui-flex__item">婚礼策划</div>
+                        <div class="weui-flex__item"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="weui-panel">
+            <div class="weui-panel__hd"><h3>娱乐活动</h3></div>
+            <div class="weui-panel__bd">
+                <div class="weui-media-box weui-media-box_text">
+                    <div class="weui-flex text-center table-style">
+                        <div class="weui-flex__item">KTV</div>
+                        <div class="weui-flex__item">密室逃脱</div>
+                        <div class="weui-flex__item">桌游/漫画</div>
+                        <div class="weui-flex__item">夜店</div>
+                    </div>
+                    <div class="weui-flex text-center table-style">
+                        <div class="weui-flex__item">酒吧</div>
+                        <div class="weui-flex__item">赌场</div>
+                        <div class="weui-flex__item">网吧网咖</div>
+                        <div class="weui-flex__item">演唱会</div>
+                    </div>
+                    <div class="weui-flex text-center table-style">
+                        <div class="weui-flex__item">表演</div>
+                        <div class="weui-flex__item">活动</div>
+                        <div class="weui-flex__item">赛事</div>
+                        <div class="weui-flex__item">游乐场/电玩</div>
+                    </div>
+                    <div class="weui-flex text-center table-style">
+                        <div class="weui-flex__item">真人CS</div>
+                        <div class="weui-flex__item">打猎钓鱼</div>
+                        <div class="weui-flex__item"></div>
+                        <div class="weui-flex__item"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="weui-panel">
+            <div class="weui-panel__hd"><h3>律师公证</h3></div>
+            <div class="weui-panel__bd">
+                <div class="weui-media-box weui-media-box_text">
+                    <div class="weui-flex text-center table-style">
+                        <div class="weui-flex__item">律师行</div>
+                        <div class="weui-flex__item">翻译公证</div>
+                        <div class="weui-flex__item"></div>
+                        <div class="weui-flex__item"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="page__ft j_bottom">
+        <div class="weui-flex">
+            <div class="weui-flex__item"><a href="ppcg_yellow_page_home.html" class="btn-ppcg">首页</a></div>
+            <div class="weui-flex__item"><a href="ppcg_yellow_page__flyers.html" class="btn-ppcg">超市每周打折信息</a></div>
+            <div class="weui-flex__item"><a href="ppcg_yellow_page__number_management_saved.html" class="btn-ppcg">号码管理</a></div>
+        </div>
+    </div>
+
+
+</div>
+<script type="text/javascript" src="https://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+<script src="https://res.wx.qq.com/open/libs/weuijs/1.0.0/weui.min.js"></script>
+</body>
+</html>

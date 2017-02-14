@@ -49,6 +49,9 @@
 .page__hd {
   margin-bottom: 15px;
 }
+.page__bd .weui-flex a {
+  color: inherit;
+}
 .page__bd .weui-flex .btn-ppcg {
   display: table-cell;
   padding: 4px;
